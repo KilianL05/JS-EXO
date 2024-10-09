@@ -9,20 +9,42 @@
   <body>
     <script>
         const nombre1 = Number(prompt("Valeur du premier nombre"));
-        const nombre2 = Number(prompt('Valeur du deuxième nombre'));
+        const nombre2 = Number(prompt("Valeur du deuxième nombre"));
         const nombre3 = Number(prompt("Valeur du troisième nombre"));
-    
+
+        const exercice = prompt("Choisissez votre exercice : Exo1, Exo2, Exo3")
+
+
         // Créer une liste avec les nombres et trier par ordre croissant
         const list = [nombre1, nombre2, nombre3].sort((a, b) => a - b);
-    
-        // Comparaison entre les deux premiers nombres
-        console.log("Le plus grand nombre entre " + nombre1 + " et " + nombre2 + " est " + (nombre1 > nombre2 ? nombre1 : nombre2));
-    
-        // Addition des deux premiers nombres
-        console.log("L'addition de " + nombre1 + " et " + nombre2 + " = " + (nombre1 + nombre2));
-    
-        // Afficher la liste triée
-        console.log("Liste de nombres triée", list);
+
+        function compare(){
+            console.log("Le plus grand nombre entre " + nombre1 + " et " + nombre2 + " est " + (nombre1 > nombre2 ? nombre1 : nombre2));
+        }
+
+        function addition(){
+            console.log("L'addition de " + nombre1 + " et " + nombre2 + " = " + (nombre1 + nombre2));
+        }
+
+        function trier(){
+            console.log("Liste de nombres triée", list);
+        }
+
+        switch (exercice){
+            case "Exo1": 
+                compare();
+                break;
+            case "Exo2": 
+                addition();
+                break;
+            default :
+                trier()
+        }
+
+
+
+        
+        
     </script>
     
   </body>
