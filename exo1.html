@@ -8,25 +8,26 @@
   </head>
   <body>
     <script>
-        const nombre1 = Number(prompt("Valeur du premier nombre"));
-        const nombre2 = Number(prompt("Valeur du deuxième nombre"));
-        const nombre3 = Number(prompt("Valeur du troisième nombre"));
-
+        /**
+         * PARTIE 1 et 2
         const exercice = prompt("Choisissez votre exercice : Exo1, Exo2, Exo3")
-
-
-        // Créer une liste avec les nombres et trier par ordre croissant
-        const list = [nombre1, nombre2, nombre3].sort((a, b) => a - b);
-
-        function compare(){
+        function comparaison(){
+            const nombre1 = Number(prompt("Valeur du premier nombre"));
+            const nombre2 = Number(prompt("Valeur du deuxième nombre"));
             console.log("Le plus grand nombre entre " + nombre1 + " et " + nombre2 + " est " + (nombre1 > nombre2 ? nombre1 : nombre2));
         }
 
         function addition(){
+            const nombre1 = Number(prompt("Valeur du premier nombre"));
+            const nombre2 = Number(prompt("Valeur du deuxième nombre"));
             console.log("L'addition de " + nombre1 + " et " + nombre2 + " = " + (nombre1 + nombre2));
         }
 
-        function trier(){
+        function tri(){
+            const nombre1 = Number(prompt("Valeur du premier nombre"));
+            const nombre2 = Number(prompt("Valeur du deuxième nombre"));
+            const nombre3 = Number(prompt("Valeur du troisième nombre"));
+            const list = [nombre1, nombre2, nombre3].sort((a, b) => a - b);
             console.log("Liste de nombres triée", list);
         }
 
@@ -40,11 +41,38 @@
             default :
                 trier()
         }
+        **/
+       // Fonction pour convertir un nombre finissant par 9 en texte
+        function convertirEnTexte(nombre) {
+            const nombresEnTexte = {
+                9: "neuf",
+                19: "dix-neuf",
+                29: "vingt-neuf",
+                39: "trente-neuf",
+                49: "quarante-neuf",
+                59: "cinquante-neuf",
+                69: "soixante-neuf",
+                79: "soixante-dix-neuf",
+                89: "quatre-vingt-neuf",
+                99: "quatre-vingt-dix-neuf"
+            };
+            return nombresEnTexte[nombre];
+        }
 
-
-
-        
-        
+        // Boucle de 1 à 100
+        for (let i = 1; i <= 100; i++) {
+            if (i % 15 === 0) {
+                console.log("FizzBuzz");  // Multiples de 15
+            } else if (i % 3 === 0) {
+                console.log("Fizz");  // Multiples de 3
+            } else if (i % 5 === 0) {
+                console.log("Buzz");  // Multiples de 5
+            } else if (i % 10 === 9) {
+                console.log(convertirEnTexte(i));  // Nombres se terminant par 9
+            } else {
+                console.log(i);  // Autres nombres
+            }
+        }
     </script>
     
   </body>
