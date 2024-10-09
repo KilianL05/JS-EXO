@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My Website</title>
+  </head>
+  <body>
+    <script>
+        const nombre1 = Number(prompt("Valeur du premier nombre"));
+        const nombre2 = Number(prompt('Valeur du deuxième nombre'));
+        const nombre3 = Number(prompt("Valeur du troisième nombre"));
+    
+        // Créer une liste avec les nombres et trier par ordre croissant
+        const list = [nombre1, nombre2, nombre3].sort((a, b) => a - b);
+    
+        // Comparaison entre les deux premiers nombres
+        console.log("Le plus grand nombre entre " + nombre1 + " et " + nombre2 + " est " + (nombre1 > nombre2 ? nombre1 : nombre2));
+    
+        // Addition des deux premiers nombres
+        console.log("L'addition de " + nombre1 + " et " + nombre2 + " = " + (nombre1 + nombre2));
+    
+        // Afficher la liste triée
+        console.log("Liste de nombres triée", list);
+    </script>
+    
+  </body>
+</html>
