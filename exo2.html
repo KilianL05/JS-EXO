@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        fetch('https://random-data-api.com/api/v2/users?size=10')
+            .then(function(res) { return res.json(); })
+            .then(function(donnees) {
+                console.log("ca passe");
+                
+                donnees.map(function(donnee) {
+                    return {
+                        h1: document.createElement("h1"),
+                        pPrenom: document.createElement("p"),
+                        pNom: document.createElement("p"),
+                        pEmail: document.createElement("p"),
+                        imgAvatar: document.createElement("img"),
+                        prenom: donnee.first_name,
+                        nom: donnee.last_name,
+                        pseudo: donnee.username,
+                        email: donnee.email,
+                        avatar: donnee.avatar
+                    };
+                }).map(function(element) {
+                    element.h1.textContent = "Détails utilisateur: " + element.pseudo;
+                    element.pPrenom.textContent = "Prénom: " + element.prenom;
+                    element.pNom.textContent = "Nom: " + element.nom;
+                    element.pEmail.textContent = "Email: " + element.email;
+                    element.imgAvatar.src = element.avatar;
+
+                    return element;
+                }).forEach(function(element) {
+                    const div = document.createElement("div");
+                    div.appendChild(element.h1);
+                    div.appendChild(element.pPrenom);
+                    div.appendChild(element.pNom);
+                    div.appendChild(element.pEmail);
+                    div.appendChild(element.imgAvatar);
+                    document.body.appendChild(div);
+                });
+            });
+    </script>
+</body>
+</html>
