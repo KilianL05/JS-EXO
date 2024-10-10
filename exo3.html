@@ -49,11 +49,11 @@
         // Appel de l'API
         fetch('https://data.strasbourg.eu/api/explore/v2.1/catalog/datasets/duree-dattente-aux-mairies-en-temps-reel/records?limit=20').then(res => {
             if (res.ok) {
-                return res.json();  // Convertit la réponse en format JSON
+                return res.json();
             } else {
                 throw new Error('Erreur lors de la requête : ' + res.status);
             }
-        }).then(data => traiterMairies(data))  // Traiter les mairies
+        }).then(data => traiterMairies(data))
         .catch(error => console.error('Erreur :', error));
     </script>
 </body>
